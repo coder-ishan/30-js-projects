@@ -29,7 +29,7 @@ h2 {
 div {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
     gap: 20px;
 }
 
