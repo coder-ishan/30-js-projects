@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drums</title>
+    <link rel="stylesheet" href="./drums.css">
+    
+</head>
+<body>
+    <h1>Drums</h1>
+    <h2>An interactive drum set to play sounds using JavaScript.</h2>
+    <script>
+        window.addEventListener('keydown',function(e){
+            const audio =  document.querySelector(`audio.${e.key}`);
+            if(!audio)return;
+            audio.currentTime = 0;
+            const para = document.querySelector(`p[key='${e.key}']`)
+            para.style.transform = 'scale(1.1)';
+            para.style.backgroundColor = "#4e4e8e";
+            setTimeout(function(){
+                para.style.transform = 'scale(1)';
+                para.style.backgroundColor = "#2e2e5e";
+            },500)
+           
+            
+            console.log(para)
+            audio.play();
+        })
+    </script>
+
+   <div>
+    <p key="a"><audio class="a" src = "../sounds/boom.wav"></audio>A: Boom</p>
+    <p key="s"><audio class="s" src = "../sounds/clap.wav"></audio>S: Clap</p>
+    <p key="d"><audio class="d" src = "../sounds/hihat.wav"></audio>D: Hihat</p>
+    <p key="f"><audio class="f" src = "../sounds/kick.wav"></audio>F: Kick</p>
+    <p key="g"><audio class="g" src = "../sounds/openhat.wav"></audio>G: Openhat</p>
+    <p key="h"><audio class="h" src = "../sounds/ride.wav"></audio>H: Ride</p>
+    <p key="j"><audio class="j" src = "../sounds/snare.wav"></audio>J: Snare</p>
+    <p key="k"><audio class="k" src = "../sounds/tink.wav"></audio>K: Tink</p>
+    <p key="l"><audio class="l" src = "../sounds/tom.wav"></audio>L: Tom</p>
+   </div>
+</body>
+</html>
